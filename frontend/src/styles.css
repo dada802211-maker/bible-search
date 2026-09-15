@@ -1,0 +1,49 @@
+/* 色と余白をまとめ、デザインの変更箇所を見つけやすくします。 */
+:root { font-family: "Yu Gothic", "Meiryo", sans-serif; color: #283d35; background: #f5f5ef; font-synthesis: none; --green: #254e43; --line: #dce2d8; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, select { font: inherit; }
+button { background: var(--green); color: white; border: 0; padding: 12px 19px; border-radius: 7px; cursor: pointer; }
+button:hover { background: #376959; }
+button:disabled { opacity: .5; cursor: default; }
+input, select { width: 100%; min-width: 0; border: 1px solid #aebbb0; background: #fff; color: #283d35; padding: 11px; border-radius: 6px; }
+:focus-visible { outline: 3px solid #b38b42; outline-offset: 3px; }
+.topbar { display: flex; align-items: center; gap: 12px; height: 78px; padding: 0 6%; background: #fff; border-bottom: 1px solid var(--line); font-weight: bold; }
+.brand-mark { font-size: 29px; color: var(--green); }
+.header-note { margin-left: auto; font-weight: normal; color: #637367; font-size: 12px; }
+main { max-width: 1250px; margin: auto; padding: 44px 32px 20px; }
+.eyebrow { font-size: 11px; letter-spacing: .17em; font-weight: bold; color: #627c67; }
+h1 { font-family: "Yu Mincho", serif; font-size: clamp(30px, 4vw, 43px); font-weight: 500; letter-spacing: .08em; margin: 14px 0; }
+.intro p { color: #667367; font-size: 14px; margin-bottom: 35px; }
+.layout { display: grid; grid-template-columns: 330px 1fr; gap: 26px; align-items: start; }
+.panel, .content { border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.panel { padding: 25px; }
+.panel h2 { font-size: 16px; margin: 0 0 23px; display: flex; align-items: center; gap: 10px; }
+.step { font-size: 11px; color: #66826c; border: 1px solid var(--line); padding: 5px; border-radius: 50%; }
+label { display: block; font-size: 12px; font-weight: bold; margin-bottom: 9px; }
+.input-row { display: flex; gap: 8px; }
+.input-row button { flex-shrink: 0; }
+.hint { font-size: 10px; line-height: 1.9; color: #69756b; }
+.selected-book { background: #f0f4ed; border-left: 3px solid #7c967d; padding: 17px; margin: 24px 0 30px; }
+.selected-book span, .selected-book small { display: block; font-size: 11px; color: #657965; }
+.selected-book strong { display: block; margin: 9px 0; font-size: 20px; }
+.selectors { display: grid; grid-template-columns: 1fr 1.3fr; gap: 12px; }
+.full { width: 100%; margin: 19px 0; display: flex; justify-content: space-between; }
+details { border-top: 1px solid var(--line); padding-top: 17px; font-size: 12px; }
+summary { cursor: pointer; }
+.book-index { list-style: none; padding: 0; max-height: 270px; overflow: auto; line-height: 2.3; }
+.book-index span { color: #617761; margin-right: 6px; }
+.content { min-height: 490px; }
+.reading { padding: 30px 36px; }
+.reading-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.reading h2 { font-family: "Yu Mincho", serif; font-size: 27px; margin: 12px 0 0; }
+.reading h2 span { font-size: 20px; font-weight: normal; margin-left: 8px; }
+.badge { background: #f0f4ed; border-radius: 20px; padding: 7px 12px; font-size: 10px; white-space: nowrap; }
+.verses { list-style: none; padding: 0; margin: 18px 0; }
+.verses li { display: flex; gap: 20px; padding: 13px 0; }
+.verse-number { color: #71866c; font-size: 12px; padding-top: 8px; min-width: 20px; }
+.verses p { font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 18px; line-height: 2.05; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.empty { min-height: 480px; display: grid; place-content: center; padding: 35px; text-align: center; color: #738071; font-size: 14px; line-height: 2; }
+.error { margin: 25px; background: #fff1ed; color: #9b3429; padding: 18px; border-radius: 6px; line-height: 1.8; }
+footer { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 20px; font-size: 11px; color: #798475; display: flex; justify-content: space-between; }
+@media (max-width: 760px) { .layout { grid-template-columns: 1fr; } main { padding: 30px 18px; } .header-note { display: none; } .reading { padding: 25px 20px; } .reading-heading { flex-wrap: wrap; } .content, .empty { min-height: 230px; } }
